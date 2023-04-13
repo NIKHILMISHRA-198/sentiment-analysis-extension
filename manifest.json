@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Sentiment Analysis",
+    "version": "1.0",
+    "description": "Analyze the sentiment of webpages to detect early signs of depression using OpenAI API.",
+    "icons": {
+      "48": "icons/neutral.png"
+    },
+    "permissions": [
+      "activeTab",
+      "storage"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content_script.js"]
+      }
+    ],
+    "background": {
+      "scripts": ["config.js", "background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_icon": "icons/neutral.png",
+      "default_popup": "popup.html"
+    }
+  }
+  
